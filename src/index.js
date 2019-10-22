@@ -15,10 +15,9 @@ const App = () => {
     <>
       Hello React!!
       <TestButton2
-        onClick={e => {
-          return getData().then(data => {
-            setData(data);
-          });
+        onClick={async e => {
+          const data = await getData();
+          setData(data);
           // console.log("普通のイベント");
         }}
       />
