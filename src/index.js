@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import TestButton from "./TestButton";
 import TestButton2 from "./TestButton2";
 
-// babel の何か入れないと、regenerateRuntime エラーでるので　async/await 使えない
 const getData = () =>
   new Promise(resolve =>
     setTimeout(() => resolve(`data: ${Math.random()}`), 2000)
