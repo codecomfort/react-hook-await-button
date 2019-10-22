@@ -6,14 +6,11 @@ const TestButton2 = props => {
   useEffect(() => {
     if (!isFetching) return;
 
-    const fetchData = () => {
+    const fetchData = async () => {
       if (props.onClick) {
-        new Promise(resolve => {
-          resolve(props.onClick());
-        }).then(() => {
-          console.log("setIsFetching(false)");
-          setIsFetching(false);
-        });
+        await props.onClick();
+        console.log("setIsFetching(false)");
+        setIsFetching(false);
       }
     };
     fetchData();
@@ -22,7 +19,7 @@ const TestButton2 = props => {
   return (
     <>
       <button
-        // disabled={isFetching}
+        disabled={isFetching}
         type="button"
         onClick={() => setIsFetching(true)}
       >
